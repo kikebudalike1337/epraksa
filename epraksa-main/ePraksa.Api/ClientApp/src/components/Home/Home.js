@@ -6,17 +6,15 @@ import styles from "./Home.module.css";
 import { useSelector } from "react-redux";
 
 const Home = (props) => {
-  const { student } = useSelector((state) => state);
-  const isAuth = student.isAuthenticated;
-  return (
-    <div className={styles.main}>
-      <div><Header/></div>
-      <div>e-Praksa</div>
-      <div>
-      {isAuth ?  <Students/> : <Login/> }
-      </div>
-    </div>
-  );
+    const { student } = useSelector((state) => state);
+    const isAuth = student.isAuthenticated;
+    return (
+        <>
+            <Header />
+            <Login />
+            {/*isAuth ? <Students /> : <Login /> */}
+        </>
+    );
 };
 
 export default Home;

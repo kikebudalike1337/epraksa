@@ -77,8 +77,31 @@ namespace ePraksa.Api.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
+        public async Task<ActionResult<Student>> PostStudent([FromBody] dynamic student)
         {
+            //         < Student >
+            // < StudentID > 1 </ StudentID >
+            // < FirstName > Luka </ FirstName >
+            // < LastName > Lukic </ LastName >
+            // < YearOfStudy > 3 </ YearOfStudy >
+            // < Course > dsfffds </ Course >
+            // < Email > luka.lukic@mail.hr </ Email >
+
+            //    < PhoneNumber > 43525634546 </ PhoneNumber >
+
+            //    < UserID > 1 </ UserID >
+            //</ Student >
+    //        {
+    //            "StudentID":"1",
+    //"FirstName":"Luka",
+    //"LastName":"Lukic",
+    //"YearOfStudy":"3",
+    //"Course":"dsfffds",
+    //"Email":"luka.lukic@mail.hr",
+    //"PhoneNumber":"43525634546",
+    //"UserID":"1"
+    //     }
+
             _context.Students.Add(student);
             await _context.SaveChangesAsync();
 

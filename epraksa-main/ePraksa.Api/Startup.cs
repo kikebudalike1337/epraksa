@@ -42,7 +42,7 @@ namespace ePraksa.Api
             //options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContextPool<BaseContext>(
-        options => options.UseMySql("Server =127.0.0.1; Port=3306; Database=epraksa; user=kristian; password='root'; CharSet=utf8;",
+        options => options.UseMySql("Server =127.0.0.1; Port=3306; Database=epraksa; user=root; password='root'; CharSet=utf8;",
 
             mySqlOptions =>
             {
